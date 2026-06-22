@@ -1,15 +1,14 @@
 # Employee Attrition Prediction & Clustering
 
-An end-to-end Python pipeline to analyze and predict employee attrition using a dataset of 15,000 records. It combines unsupervised clustering for profile analysis and supervised learning for prediction.
+An end-to-end Machine Learning pipeline built to predict employee attrition and perform workforce behavioral segmentation using a dataset of 15,000 records.
 
-## Repository Structure
-*   `Employee_Attrition_Clean.ipynb`: Clean Jupyter Notebook implementing the pipeline.
-*   `educational_website/`: Interactive web dashboard simulating the models and backpropagation.
+## Repository Contents
+*   `Employee_Attrition_Clean.ipynb`: Jupyter Notebook containing data preprocessing, clustering, and predictive modeling steps.
 
 ## Pipeline Overview
-1. **Preprocessing**: Handled categorical encoding and standardized features exclusively on the training split to avoid data leakage.
-2. **Clustering & PCA**: Applied K-Means (K=3) to identify high-risk employee profiles (e.g., overworked stars with a 50.1% churn rate) and visualized them using 2D PCA projection.
-3. **Modeling**: Trained and compared a Multi-Layer Perceptron (MLP) Neural Network against a Gradient Boosting Classifier (GBM).
+1. **Preprocessing & Scaling**: Applied one-hot encoding for categorical department attributes and mapped salary levels. Fitted the `StandardScaler` exclusively on the training subset to prevent Data Leakage.
+2. **K-Means Clustering & PCA**: Grouped employees into 3 behavioral segments using K-Means (optimized via the Elbow Method) and projected the high-dimensional feature space to 2D using PCA.
+3. **Supervised Classification**: Trained and compared a Multi-Layer Perceptron (MLP) Neural Network against a Gradient Boosting Classifier (GBM).
 
 ## Results
 Evaluation metrics on the 25% test set:
@@ -20,8 +19,7 @@ Evaluation metrics on the 25% test set:
 | **MLP (Neural Network)** | **96.85%** | **93.39%** | **93.39%** | **93.39%** |
 
 ## How to Run
-1. **Notebook**: Open `Employee_Attrition_Clean.ipynb` in Jupyter or Google Colab and run the cells.
-2. **Dashboard**: Open `educational_website/index.html` in any web browser to view the interactive simulations.
+Open `Employee_Attrition_Clean.ipynb` in Jupyter or Google Colab, upload the dataset CSV when prompted, and execute the cells.
 
 ## Tech Stack
-Python, Scikit-Learn, Pandas, NumPy, MLP, Gradient Boosting, K-Means, PCA, Chart.js.
+Python, Scikit-Learn, Pandas, NumPy, MLP, Gradient Boosting, K-Means, PCA, Matplotlib, Seaborn.
